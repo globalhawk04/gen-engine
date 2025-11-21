@@ -117,7 +117,7 @@ python -m scripts.test_all_systems
 *   [ ] **Frontend:** Port the dashboard to React/Next.js.
 
 **Found a bug?** Open an issue.
-**Have a feature idea?** Join the discussion on [Discord](Link_To_Discord) or submit a PR.
+**Have a feature idea?** Submit a PR.
 
 ---
 
