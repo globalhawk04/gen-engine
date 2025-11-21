@@ -11,7 +11,6 @@
 ---
 
 ## 📜 
-Hardware engineering is gatekept by expensive consultants and proprietary supply chains. This is an attempt to democratize physical creation.
 
 This is not a chatbot. It is an **Agentic Framework** that acts as a Chief Engineer, Sourcing Manager, and Physics Simulator in one. It takes a prompt, validates the physics, finds the real parts in stock, and generates the files to build it.
 
@@ -20,7 +19,7 @@ This is not a chatbot. It is an **Agentic Framework** that acts as a Chief Engin
 ---
 
 ## 🧠 How It Works
-Unlike standard LLMs which hallucinate physical specifications, We Use a **Hardware-Awar" architecture**. It grounds its creativity in reality by using Computer Vision to read datasheets, Python simulations to validate flight physics, and OpenSCAD to generate physical geometry.
+Unlike standard LLMs which hallucinate physical specifications, We Use a **Hardware-Aware architecture**. It grounds its creativity in reality by using Computer Vision to read datasheets, Python simulations to validate flight physics, and OpenSCAD to generate physical geometry.
 
 ### The "Self-Healing" Loop
 The core differentiator is the **Optimization Agent**. If the sourced parts fail the physics simulation (e.g., TWR < 1.5), the system doesn't error out. It *reasons* about the failure, swaps components (e.g., "Upgrade motors from 2207 to 2306"), and re-simulates until it passes.
