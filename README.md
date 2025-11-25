@@ -1,104 +1,160 @@
-## Version Notes - v2.0 (November 2025)
-**Major Architectural Overhaul:**
-*   **CAD Engine:** Migrated from OpenSCAD to **CadQuery**. The system now understands object-oriented geometry (Mass, Inertia, Center of Gravity) rather than just string manipulation.
-*   **Physics Engine:** Migrated from static math scripts (`calc_twr.py`) to **PyBullet**. The system now exports URDF files and performs dynamic flight simulation (Hover, Barrel Rolls, Loops) with a virtual PID controller.
-*   **Evolutionary Loop:** Implemented `auto_engineer.py`. The system now iteratively designs, builds, flies, crashes, analyzes telemetry, and rebuilds the hardware automatically until performance criteria are met.
 
-# OpenForge
-**A Hardware-Aware Agentic Framework for Autonomous Engineering.**
+# OpenForge: The Autonomous Drone Architect
 
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Engine: CadQuery](https://img.shields.io/badge/CAD-CadQuery-red)](https://cadquery.readthedocs.io/)
-[![Sim: PyBullet](https://img.shields.io/badge/Physics-PyBullet-yellow)](https://pybullet.org/)
-[![Status](https://img.shields.io/badge/Status-Active_Development-green)]()
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![AI](https://img.shields.io/badge/AI-Gemini%20Pro%20%26%20Vision-orange)
+![CAD](https://img.shields.io/badge/CAD-OpenSCAD-green)
+![License](https://img.shields.io/badge/License-AGPL_v3-blue.svg)
 
-> **"Neuro-Symbolic Architecture for Physical Systems: AI for Reasoning, Code for Physics."**
+**OpenForge** is an AI-powered "Hardware Compiler." It transforms natural language requests into fully engineered, flight-ready drone designs.
+
+Unlike standard chatbots that hallucinate hardware, OpenForge uses a **Cyber-Physical Agentic Loop**: it interviews the user, browses the real internet for parts, reads technical diagrams using Computer Vision, simulates flight physics, generates manufacturing files (CAD), and renders a 3D Digital Twin.
 
 ---
 
-## 📜 Overview
+## 🚀 Features
 
-OpenForge is an experiment in **Evolutionary Manufacturing**. It demonstrates how Large Language Models (LLMs) can be grounded in physical reality by chaining them with deterministic engineering simulation tools.
+### 1. Cognitive Engineering Agents
+*   **The Architect:** Determines the optimal topology (e.g., "Heavy Lift Octocopter" vs. "Tiny Whoop") based on user intent.
+*   **The Chief Engineer:** Refines constraints, determines fastening methods, and ensures voltage/KV matching.
 
-Unlike standard chatbots that hallucinate physical specifications, OpenForge uses a **Closed-Loop Engineering System**:
-1.  **The Architect (AI):** Defines the high-level topology (e.g., "5-inch Freestyle Drone").
-2.  **The Forge (CadQuery):** Procedurally generates the mechanical assembly and calculates the Inertia Tensor.
-3.  **The Proving Ground (PyBullet):** Spawns the Digital Twin in a physics sandbox and attempts autonomous flight maneuvers.
-4.  **The Optimizer (Heuristic/AI):** Analyzes crash telemetry (e.g., "Rollover at T=2.4s") and mutates the hardware specs to fix the flaw.
+### 2. Fusion Sourcing Engine
+*   **Real-Time Search:** Scrapes the web for current components and prices.
+*   **Vision AI:** Uses Multimodal LLMs to "look" at product images and read mounting patterns, USB orientations, and dimensions that aren't listed in the text description.
 
----
+### 3. Physics & Simulation
+*   Calculates Thrust-to-Weight Ratio (TWR), Disk Loading, and estimated Hover Throttle.
+*   Simulates PID loop responses to generate flight telemetry logs.
 
-## 🧠 Architecture: The Evolutionary Loop
+### 4. Generative Fabrication (CAD)
+*   Procedurally generates **OpenSCAD** scripts based on the specific dimensions of sourced parts.
+*   Exports STL files for the frame, motors, flight stack, and batteries.
 
-The core differentiator of OpenForge is the **Self-Healing Loop**. It does not just generate a design; it *proves* it works.
-
-If a design fails the flight test (e.g., crashes during a loop-de-loop), the system catches the failure event. The Optimization Agent reasons about the physics (e.g., *"The drone was too heavy to recover from the dive; increasing propeller surface area"*), modifies the blueprint, and re-runs the simulation.
-
-
-## ✨ Key Capabilities
-
-*   **🏭 High-Fidelity CAD Generation:** Uses **CadQuery** to generate constraint-based assemblies. The system models specific components (Motors, Stacks, Batteries) and "mates" them to a procedurally generated frame, ensuring exact fitment and accurate center-of-mass calculations.
-*   **🧪 Dynamic Physics Simulation:** Instead of simple math checks, OpenForge exports a **URDF (Unified Robot Description Format)** file. It simulates Aerodynamic Drag, Motor Thrust curves, and PID Control loops in **PyBullet**.
-*   **🎥 Automated Forensic Logging:** Every simulation run is recorded. The system generates `.mp4` video files of the flight tests (hovering, acrobatic stunts) alongside JSON telemetry logs, creating an audit trail of *why* a design succeeded or failed.
-*   **🧬 Evolutionary Optimization:** The system runs in generations. It can start with a flawed design (e.g., tiny props on a heavy frame), watch it fail, and iteratively evolve the hardware geometry until it achieves stable flight.
+### 5. Digital Twin Dashboard
+*   Interactive WebGL (Three.js) visualizer.
+*   Step-by-step assembly guide generated dynamically for the specific parts list.
+*   Flight telemetry charts.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Architecture
 
-*   **Core Logic:** Python 3.10+
-*   **CAD Engine:** CadQuery (Parametric Geometry & STEP Export)
-*   **Physics Engine:** PyBullet (Rigid Body Dynamics & Collision)
-*   **Math:** NumPy (Vector math for PID controllers)
-*   **Visualization:** Graphviz (Schematics) & Browser-based Video/GLTF
+OpenForge operates as a linear pipeline of specialized agents:
+
+```mermaid
+graph TD
+    A[User Prompt] -->|Natural Language| B(Architect Agent)
+    B -->|Clarifying Questions| A
+    B -->|Topology Definition| C(Sourcing Agent)
+    C -->|Search Queries| D[Fusion Service]
+    D -->|Web Scraping + Vision AI| E[Bill of Materials]
+    E -->|Mass & Thrust Data| F(Physics Engine)
+    E -->|Dimensions| G(CAD Engine)
+    F --> H[Simulation Report]
+    G --> I[STL Assets]
+    E --> J(Documentation Agent)
+    H & I & J --> K[Digital Twin Dashboard]
+```
 
 ---
 
-## 🚀 Getting Started
+## 📦 Installation
 
 ### Prerequisites
 *   **Python 3.10+**
-*   **FFmpeg** (Required for video recording in PyBullet)
+*   **OpenSCAD** (Required for CAD generation)
+    *   *Linux:* `sudo apt install openscad`
+    *   *Mac:* `brew install --cask openscad`
+    *   *Windows:* Download installer from openscad.org
+*   **Google Gemini API Key**
 
-### 1. Installation
+### Setup
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/yourusername/openforge.git
+    cd openforge
+    ```
+
+2.  **Create a virtual environment**
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+
+3.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    playwright install  # For the web scraper
+    ```
+
+4.  **Configure Environment**
+    Create a `.env` file in the root directory:
+    ```ini
+    GOOGLE_API_KEY=your_gemini_api_key_here
+    GOOGLE_SEARCH_ENGINE_ID=your_cse_id_here # Optional, falls back to direct scraping
+    ```
+
+---
+
+## 🖥️ Usage
+
+Run the main entry point. The system handles the rest.
+
 ```bash
-git clone https://github.com/yourusername/OpenForge.git
-cd OpenForge
-pip install -r requirements.txt
-# Ensure you have cadquery, pybullet, numpy, and scipy installed
+python main.py
 ```
 
-### 2. Run the Autonomous Engineer
-To witness the full Evolution Cycle (Design -> Build -> Fly -> Fix):
+**The Workflow:**
+1.  **Intake:** You will be asked what you want to build (e.g., *"A rugged 5-inch freestyle drone for under $400"*).
+2.  **Interview:** The AI will ask clarifying questions (e.g., *"Do you need Analog or Digital video?"*).
+3.  **Processing:** Watch the console as the agents scrape the web, analyze images, and simulate physics.
+4.  **Result:** A browser window will automatically open displaying the **Mission Dashboard**.
 
-```bash
-python auto_engineer.py
+### Output
+All artifacts are saved to the `output/` directory:
+*   `dashboard.html`: The interactive visualizer.
+*   `master_record.json`: The "Source of Truth" containing all reasoning and specs.
+*   `*.stl`: The generated 3D models.
+
+---
+
+## 📂 Project Structure
+
+```text
+openforge/
+├── app/
+│   ├── services/
+│   │   ├── ai_service.py       # LLM Interaction & Logic
+│   │   ├── fusion_service.py   # Search + Scrape + Vision
+│   │   ├── cad_service.py      # OpenSCAD Generation
+│   │   └── physics_service.py  # Mathematical Simulation
+│   ├── cad/                    # SCAD Libraries
+│   └── prompts.py              # System Instructions & Axioms
+├── templates/
+│   └── dashboard.html          # WebGL Viewer Template
+├── output/                     # Generated Artifacts
+└── main.py                     # Application Entry Point
 ```
 
-### 3. Analyze the Results
-The system creates a `static/evolution` directory. Inside, you will find folders for each generation (`gen_1`, `gen_2`...):
-*   `flight.mp4`: A video recording of the simulation test.
-*   `drone.urdf`: The physics description file.
-*   `master_dna.json`: The specs and performance metrics.
-*   `base.stl` / `prop.stl`: The 3D printable files.
+---
+
+## ⚠️ Disclaimer
+
+**OpenForge is a prototype.**
+*   **Safety:** Always verify the generated Bill of Materials before purchasing.
+*   **Physics:** Simulations are mathematical approximations based on scraped data.
+*   **Sourcing:** Web scrapers may break if target websites change their DOM structure.
 
 ---
 
 ## 🤝 Contributing
 
-This project is a framework for **Hardware-Aware AI**. We are looking for contributors to help expand the "Vertical Slice":
+Contributions are welcome! Please focus on:
+1.  **New Parts Libraries:** Improving the `cad/` OpenSCAD modules.
+2.  **Scrapers:** Adding support for more drone retailers.
+3.  **Physics:** Improving the accuracy of the drag/thrust models.
 
-*   **Aerodynamics:** Implement more complex drag models (CFD approximation).
-*   **Sourcing:** Re-integrate the Live Sourcing/Price Check module with the new CAD pipeline.
-*   **Frontend:** Build a React/Three.js dashboard to visualize the evolution history in real-time.
+## 📄 License
 
----
-
-## 📜 License
-
-**AGPL v3 License.**
-
-*   **Open Source:** Free to use and modify for open projects.
-*   **Commercial:** Proprietary use requires a commercial license.
-```
+**AGPL v3**. See `LICENSE` for details. This software is open source, but if you modify it and provide it as a service, you must share your source code.
