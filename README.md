@@ -9,79 +9,79 @@ Feature	Feasibility (Now)	Required Tech / Tools	Primary Challenge	Verdict
 7. Regulatory/Safety	9/10	Python Dictionaries, JSON	Legal Maintenance: Drone laws change constantly and vary by region. Keeping the rule set up-to-date is a non-trivial legal/administrative task.	Yes. A basic version for a single region (e.g., the >250g FAA rule) is very easy to implement.
 8. Continuous Learning	7/10	Database, ML Framework, Job Scheduler	MLOps Infrastructure: This is a full MLOps project requiring a data pipeline, retraining scripts, and model deployment strategies.	Yes, but it's a significant project. The tools all exist, but this is a complex system to build.
 
-# OpenForge: The Autonomous Drone Architect
+
+
+
+
+
+
+# OpenForge: Autonomous Supply Chain & Engineering Platform
 
 <div align="center">
 
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-red.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+[![Status](https://img.shields.io/badge/Status-Prototype-orange.svg)]()
 
-An AI-powered generative engineering system that designs, validates, and documents custom FPV drones from natural language requirements.
+**The "Iron Man" Protocol for Hardware Engineering.**  
+An AI system that builds its own inventory, verifies components with computer vision, and designs mission-critical drones.
 
 </div>
 
 ---
 
-**OpenForge is an AI-powered Hardware Compiler.** It transforms high-level, natural language requests into fully engineered, flight-ready drone designs.
+**OpenForge is not a chatbot.** It is an automated engineering firm.
 
-Unlike standard chatbots that often hallucinate hardware specifications, OpenForge utilizes a **Cyber-Physical Agentic Workflow**. It interviews the user, browses the real-time internet for available components, reads technical diagrams using Computer Vision, validates the design for conceptual and geometric compatibility, generates manufacturing files (CAD), and renders an interactive 3D Digital Twin.
+Most AI engineering tools are "Reactive"—they wait for a user to ask for a part, then try to scrape the web, often hallucinating specifications. OpenForge is **"Proactive."** It utilizes a background "Night Shift" agent that relentlessly scours the global supply chain, verifying components using Computer Vision, and building a local "Arsenal" of trusted parts.
 
-Most importantly, OpenForge is **resilient**. When it encounters design flaws or sourcing failures, it autonomously diagnoses the problem and enters a self-correction loop to find a viable solution.
+When you ask OpenForge to build a drone, it doesn't guess. It consults its verified inventory, simulates the physics, checks for CAD collisions, and offers a strategic choice: **Buy** an off-the-shelf solution, or **Build** a custom rig.
 
+## 🚀 Key Capabilities
 
+### 1. The "Arsenal" (Inventory Engine)
+*   **The Night Shift:** A background agent (`seed_arsenal.py`) runs autonomously to hunt for components. It roleplays different personas (Rancher, Racer, Cinema) to find diverse parts.
+*   **Vision Verification:** The system refuses to trust text descriptions. It uses **Gemini Vision** to read technical datasheets and diagrams. It only adds a part to the database if it identifies critical specs (mounting patterns, dimensions, voltage) with **>85% confidence**.
+*   **Persistent Memory:** Verified parts are stored in a local JSON database, allowing for instant, zero-hallucination lookups during design.
 
-## 🚀 Features
+### 2. The "Consultant" (Buy vs. Build)
+*   **Market Scout Agent:** When presented with a mission, OpenForge doesn't just try to build a robot. It also scans the market for Commercial Off-The-Shelf (COTS) solutions (e.g., DJI Enterprise, Autel).
+*   **Strategic Output:** The final dashboard presents a comparison: The estimated cost and effort to build a custom verified design vs. the price and specs of an immediate purchase.
 
-#### 1. Dynamic, Multi-Agent Engineering Core
-*   **The Architect:** Analyzes user intent to dynamically determine all required component categories (e.g., adds a `Companion_Computer` for autonomy, a `GPS_Module` for long range, etc.), moving beyond static templates.
-*   **The Sourcing Engineer:** Generates specific, context-aware search queries for the dynamically generated parts list.
-*   **The Master Builder:** Acts as a quality control expert, analyzing the sourced parts for conceptual compatibility before any CAD is generated.
-*   **The Optimization Engineer:** Diagnoses design failures (`conceptual`, `geometric`, or `sourcing`) and formulates a precise recovery strategy.
+### 3. The "Architect" (Design Core)
+*   **Mission-Driven Design:** Translates vague requests (e.g., "Find lost calves in brush") into engineering constraints (e.g., "High-torque motors, propeller guards, thermal camera").
+*   **Supply Chain Logic:** Prioritizes parts from the local verified Arsenal. Only triggers a "Deep Web Search" if the local inventory cannot satisfy the mission requirements.
 
-#### 2. Autonomous Validation & Self-Correction
-*   **Agentic Loop:** The system is not a linear pipeline but a resilient loop. It iterates on a design until all validation checks pass.
-*   **"Nuke and Rebuild" Strategy:** For fundamentally flawed designs (e.g., a mix of industrial and hobby-grade parts), the AI intelligently scraps the entire Bill of Materials and re-architects the build around a new, known-good "anchor" component.
-
-#### 3. Fusion Sourcing Engine
-*   **Real-Time Search:** Scrapes the web for currently available components and prices, avoiding outdated or out-of-stock parts.
-*   **Generative Vision AI:** Uses a "Vision Prompt Engineer" (a meta-AI) to dynamically generate analysis prompts for any component type. This allows the system to extract critical specs like mounting patterns and dimensions from product images, even for parts it has never seen before.
-
-#### 4. Physics, Fabrication, and Digital Twin
-*   **Physics Simulation:** Calculates Thrust-to-Weight Ratio (TWR), Disk Loading, and estimated flight time based on the validated Bill of Materials.
-*   **Generative CAD:** Procedurally generates OpenSCAD scripts and STL files based on the specific dimensions of the sourced parts.
-*   **Interactive Dashboard:** The final output is a WebGL (Three.js) Digital Twin featuring an animated, step-by-step assembly guide, a complete Bill of Materials with links, and flight telemetry charts.
+### 4. Validation & Digital Twin
+*   **Physics Simulator:** Calculates flight time, thrust-to-weight ratio, and disk loading based on the *actual* weights of verified parts.
+*   **Generative CAD:** Procedurally generates 3D models (OpenSCAD) to check for geometric collisions (e.g., "Does the battery fit inside this specific frame?").
+*   **Web Dashboard:** Renders a 3D interactive model, assembly guide, and flight log simulation in the browser.
 
 ## 🛠️ Architecture
 
-OpenForge operates not as a simple pipeline, but as a resilient, multi-agent system with a core validation loop.
+OpenForge separates the **Data Acquisition** (Seeding) from the **Engineering** (Building).
 
 <div align="center">
 
 ```mermaid
 graph TD
-    A[User Prompt] --> B{1. Planning Agents};
-    B --> C(Dynamic Part List);
-    C --> D{2. Sourcing Loop};
-    D --> E(Initial BOM);
-    E --> F{3. Core Validation Loop};
-
-    subgraph 3. Core Validation Loop
-        direction TB
-        F_A(Master Builder AI<br>Conceptual Check) --> F_B{Pass?};
-        F_B -- Yes --> F_C(CAD Generation);
-        F_C --> F_D(Geometry Simulator);
-        F_D --> F_E{Pass?};
-        F_B -- No --> F_FAIL;
-        F_E -- No --> F_FAIL;
-        F_FAIL(Optimization Engineer AI<br>Diagnose & Fix);
-        F_FAIL --> F_RESTART(Re-architect or Replace Part);
-        F_RESTART --> F;
+    subgraph "The Night Shift (Background)"
+        A[Seed Agent] -->|Roleplays Mission| B(Rancher/Engineer Persona);
+        B -->|Generates Queries| C(Deep Recon);
+        C -->|Scrape & Vision Check| D{Confidence > 85%?};
+        D -- Yes --> E[(Arsenal Database)];
+        D -- No --> F[Discard];
     end
-    
-    F -- SUCCESS --> G(Final Validated Design);
-    G --> H{4. Finalization};
-    H --> I(Digital Twin Dashboard);
+
+    subgraph "The Day Shift (User Facing)"
+        User -->|Mission Prompt| Architect;
+        Architect -->|Query| Arsenal{Check Arsenal};
+        Arsenal -- Found --> BOM[Draft BOM];
+        Arsenal -- Missing --> LiveSearch[Live Search Fallback];
+        LiveSearch --> BOM;
+        BOM --> Physics[Physics Sim];
+        Physics --> CAD[CAD Collision Check];
+        CAD --> Dashboard[Digital Twin];
+    end
 ```
 </div>
 
@@ -89,11 +89,12 @@ graph TD
 
 #### Prerequisites
 *   **Python 3.10+**
-*   **OpenSCAD:** The command-line tool must be installed and in your system's PATH.
-    *   **Linux:** `sudo apt install openscad`
-    *   **Mac:** `brew install --cask openscad`
-    *   **Windows:** Download installer from [openscad.org](https://openscad.org/downloads.html)
-*   **Google AI API Key**
+*   **OpenSCAD:** Required for 3D model generation.
+    *   Linux: `sudo apt install openscad`
+    *   Mac: `brew install --cask openscad`
+    *   Windows: [Download Installer](https://openscad.org/)
+*   **Google Gemini API Key** (for Vision/LLM)
+*   **Google Custom Search API Key** (for Web Recon)
 
 #### Setup
 1.  **Clone the repository:**
@@ -102,76 +103,63 @@ graph TD
     cd openforge
     ```
 
-2.  **Create and activate a virtual environment:**
-    ```sh
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows use: venv\Scripts\activate
-    ```
-
-3.  **Install dependencies:**
+2.  **Install dependencies:**
     ```sh
     pip install -r requirements.txt
-    playwright install  # Installs browsers for the web scraper
+    playwright install chromium
     ```
 
-4.  **Configure Environment:**
-    *   Create a `.env` file in the root directory.
-    *   Add your Google AI API key:
-    ```.env
-    GOOGLE_API_KEY="your_gemini_api_key_here"
-    GOOGLE_SEARCH_ENGINE_ID="your_cse_id_here" # Required for component search
+3.  **Configuration:**
+    Create a `app/config.py` or set environment variables:
+    ```python
+    GOOGLE_API_KEY = "your_key"
+    GOOGLE_SEARCH_ENGINE_ID = "your_cse_id"
     ```
 
 ## 🖥️ Usage
 
-Run the main entry point and follow the interactive prompts.
-
+### Phase 1: Seed the Arsenal (The "Night Shift")
+Before you build, let the AI go hunting. This script fills your local database with high-quality parts.
 ```sh
-python3 main.py
+python tools/seed_arsenal.py
 ```
+*   *What happens:* The agents will act as a "Rancher," identifying needs for a fleet, finding parts, verifying them via Computer Vision, and saving them to `data/drone_arsenal.json`.
 
-1.  **Intake:** Enter your high-level mission requirements (e.g., "A rugged 5-inch freestyle drone for under $400").
-2.  **Interview:** The AI will ask clarifying questions if needed.
-3.  **Processing:** Watch the console as the agents design, source, validate, and self-correct the build.
-4.  **Result:** A browser window will automatically open displaying the final, validated Digital Twin.
-
-All generated artifacts are saved to the `output/` directory, including the `dashboard.html`, all `*.stl` files, and the `master_record.json` audit trail.
+### Phase 2: Run the Architect (The "Day Shift")
+Now, use those parts to design a specific solution.
+```sh
+python main.py
+```
+*   *What happens:* Enter your mission. The system will consult the `drone_arsenal.json`, simulate the physics, and generate a `dashboard.html` with your custom build and COTS alternatives.
 
 ## 📂 Project Structure
 
 ```
-/
+OpenForge/
 ├── app/
 │   ├── services/
-│   │   ├── ai_service.py       # Core AI agent functions (Architect, Engineer, etc.)
-│   │   ├── fusion_service.py   # Orchestrates Search, Scrape & Vision
-│   │   ├── cad_service.py      # OpenSCAD Generation
-│   │   └── ...                 # Other microservices
-│   └── prompts.py              # System instructions for all AI agents
-├── cad/
-│   └── library.scad            # Parametric SCAD library for drone parts
+│   │   ├── fusion_service.py   # The "Eyes": Scrapes & runs Vision AI
+│   │   ├── cad_service.py      # The "Hands": Generates OpenSCAD
+│   │   ├── physics_service.py  # The "Brain": Calculates flight math
+│   │   └── ...
+│   └── prompts.py              # The "Personality": Rancher, Engineer, Scout
+├── data/
+│   └── drone_arsenal.json      # The Verified Part Database
+├── tools/
+│   └── seed_arsenal.py         # The Background Seeder Script
 ├── templates/
-│   └── dashboard.html          # WebGL Digital Twin Template
-├── output/                     # Generated artifacts (STLs, dashboard, logs)
-└── main.py                     # Main application entry point and orchestrator
+│   └── dashboard.html          # Digital Twin UI
+└── main.py                     # User Entry Point
 ```
-
-## ⚠️ Disclaimer
-
-OpenForge is an advanced prototype demonstrating the potential of generative AI in engineering.
-*   **Safety:** Always double-check component compatibility and prices before purchasing.
-*   **Simulations:** Physics and cost estimations are based on scraped data and are approximations.
-*   **Sourcing:** The web is constantly changing. The scraping and data extraction services may require maintenance as websites evolve.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please focus on areas that enhance the system's intelligence and robustness:
-*   **AI Agent Prompts:** Improving the instructions and reasoning capabilities in `app/prompts.py`.
-*   **Scraper Resilience:** Adding more robust data extraction patterns for a wider variety of e-commerce sites.
-*   **CAD Library:** Expanding the `cad/library.scad` with more parametric component models.
-*   **Physics Models:** Improving the accuracy of the drag and thrust calculations in `physics_service.py`.
+We are building the "Linux of Hardware."
+*   **Submit Arsenals:** Found 100 great racing parts? Submit your `drone_arsenal.json`.
+*   **New Personas:** Write a prompt for a "Cinematographer" or "Search & Rescue" agent in `prompts.py`.
+*   **Scrapers:** Help us parse complex sites like Mouser or DigiKey.
 
 ## 📄 License
 
-This project is licensed under the AGPL v3. See the `LICENSE` file for details. This software is open source, but if you modify it and provide it as a service over a network, you must also share your modified source code.
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-red.svg)](https://www.gnu.org/licenses/agpl-3.0)
 ```
