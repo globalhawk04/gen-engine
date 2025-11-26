@@ -1,1 +1,0 @@
-import("/home/j/Desktop/viz_it/drone/output/mission_battery.stl");
