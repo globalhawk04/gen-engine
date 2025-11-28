@@ -8,8 +8,7 @@ Drone_3 works end to end however the physics video game simulator needs work as 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-red.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![Status](https://img.shields.io/badge/Status-V2_Architecture-green.svg)]()
 
-**The "Iron Man" Protocol for Hardware Engineering.**  
-An AI system that builds its own inventory, manufactures virtual products, and simulates mission-critical robotics.
+An AI system that builds its own inventory, creates virtual products, and simulates mission-critical robotics.
 
 </div>
 
