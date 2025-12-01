@@ -1,4 +1,4 @@
-Drone_4 first princple prompts update to gather more detailed information for issac simmulation.  Catelog Json has improved.  Instead of epic video game simualtion i am going with nvidia issac to simulate.  Upgrading simulation will be the main focus for the next 72 hours.  Once I have the full pipeline completed to a point in which i am satified the simulation is as best as i can get i will shift from drones to something else like quad or robot arms using hugging face tut: https://huggingface.co/docs/lerobot/en/so101
+System now works from seed to simulation for drones! I cheated a little bit in the make_fleet.py to rely less on LLM to create but I had to remind myself that this was a test of Gem 3.0 reasoning and not making things absolutely perfect to avoid going down a needless rabithole.  Now that I have the pipeline completed to a point in which i am satified the simulation is as best as i can get i will shift from drones to something else like quad or robot arms using hugging face tut: https://huggingface.co/docs/lerobot/en/so101
 
 This is a portfolio piece.  I am actively looking for high-level consulting gigs (Fractional CTO, Principal Engineer) or Team Lead roles.
 
@@ -6,6 +6,9 @@ seed.py
 seed_ecosystem.py
 refine_arsenal.py
 design_fleet.py
+
+Drone Simulated in Isaac Sim Python 5.0.0!!!
+<img width="743" height="884" alt="image" src="https://github.com/user-attachments/assets/cd7709cb-4544-4ee1-866d-1064b5a7c14d" />
 
 # OpenForge: Neuro-Symbolic Manufacturing Engine
 
