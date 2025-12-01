@@ -7,6 +7,10 @@ seed_ecosystem.py
 refine_arsenal.py
 design_fleet.py
 
+seed.py Understanding intent, generating model, creating search, and looking for parts:
+<img width="805" height="467" alt="image" src="https://github.com/user-attachments/assets/f5380ad2-d31f-4dcd-a22d-216c33fe6d55" />
+
+
 Drone Simulated in Isaac Sim Python 5.0.0!!!
 <img width="743" height="884" alt="image" src="https://github.com/user-attachments/assets/cd7709cb-4544-4ee1-866d-1064b5a7c14d" />
 
