@@ -1,0 +1,326 @@
+[
+  {
+    "sku_id": "DRONE-25C096",
+    "model_name": "Custom HEAVY_LIFT - RR Alligator x8 12s ",
+    "class": "HEAVY_LIFT",
+    "components": {
+      "frame": "RR Alligator x8 12s v2 BNF",
+      "motor": "T-Motor MN3110 - 26 470kv Tiger Brushless Motor 3S-6S 80g Quad ..."
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 1.17,
+        "rotor_count": 4,
+        "motor_max_force_n": 45.0,
+        "wheelbase_mm": 480.0
+      },
+      "visuals": {
+        "primary_color_hex": "#111111",
+        "secondary_color_hex": null,
+        "material_type": "CARBON_FIBER",
+        "surface_finish": "MATTE",
+        "texture_pattern": "WEAVE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-BC3A87",
+    "model_name": "Custom 5_INCH - Makeflyeasy Fighter ",
+    "class": "5_INCH",
+    "components": {
+      "frame": "Makeflyeasy Fighter 2430mm UAV Fixed Wing Drones \u2013 UAVMODEL",
+      "motor": "UAV Motor (1-100kg Thrust)"
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 0.947,
+        "rotor_count": 4,
+        "motor_max_force_n": 15.0,
+        "wheelbase_mm": 225.0
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-8B6774",
+    "model_name": "Custom HEAVY_LIFT - Tarot FY680 3k Carbo",
+    "class": "HEAVY_LIFT",
+    "components": {
+      "frame": "Tarot FY680 3k Carbon Fiber Full Folding Hexacopter ... - Amazon.com",
+      "motor": "T-Motor MN3110 - 26 470kv Tiger Brushless Motor 3S-6S 80g Quad ..."
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 1.33,
+        "rotor_count": 6,
+        "motor_max_force_n": 45.0,
+        "wheelbase_mm": 680.0
+      },
+      "visuals": {
+        "primary_color_hex": "#D0D1D5",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "SATIN",
+        "texture_pattern": "NONE",
+        "is_emissive": true,
+        "emissive_color_hex": "#FFFFFF"
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-C96409",
+    "model_name": "Custom 5_INCH - Hobbyking Turnigy Ta",
+    "class": "5_INCH",
+    "components": {
+      "frame": "Hobbyking Turnigy Talon Hexacopter frame 3D Models | Page 1 ...",
+      "motor": "UAV Motor (1-100kg Thrust)"
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 1.047,
+        "rotor_count": 6,
+        "motor_max_force_n": 15.0,
+        "wheelbase_mm": 225.0
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-7B35DD",
+    "model_name": "Custom 5_INCH - iFlight Nazgul XL10 ",
+    "class": "5_INCH",
+    "components": {
+      "frame": "iFlight Nazgul XL10 V6 10\" Frame Kit",
+      "motor": "UAV Motor (1-100kg Thrust)"
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 0.947,
+        "rotor_count": 4,
+        "motor_max_force_n": 15.0,
+        "wheelbase_mm": 420.0
+      },
+      "visuals": {
+        "primary_color_hex": "#3D3D3D",
+        "secondary_color_hex": null,
+        "material_type": "CARBON_FIBER",
+        "surface_finish": "MATTE",
+        "texture_pattern": "WEAVE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-E662FA",
+    "model_name": "Custom 5_INCH - Untitled",
+    "class": "5_INCH",
+    "components": {
+      "frame": "Untitled",
+      "motor": "UAV Motor (1-100kg Thrust)"
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 0.947,
+        "rotor_count": 4,
+        "motor_max_force_n": 15.0,
+        "wheelbase_mm": 225.0
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-4BDE1E",
+    "model_name": "Custom HEAVY_LIFT - Tarot X4 Quadcopter ",
+    "class": "HEAVY_LIFT",
+    "components": {
+      "frame": "Tarot X4 Quadcopter Kit TL4X001 - Tarot Drones USA / Alpha RC Heli",
+      "motor": "T-Motor MN3110 - 26 470kv Tiger Brushless Motor 3S-6S 80g Quad ..."
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 1.17,
+        "rotor_count": 4,
+        "motor_max_force_n": 45.0,
+        "wheelbase_mm": 960.0
+      },
+      "visuals": {
+        "primary_color_hex": "#2A2A2A",
+        "secondary_color_hex": null,
+        "material_type": "CARBON_FIBER",
+        "surface_finish": "SATIN",
+        "texture_pattern": "WEAVE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-436936",
+    "model_name": "Custom 5_INCH - iFlight - Official S",
+    "class": "5_INCH",
+    "components": {
+      "frame": "iFlight - Official Store",
+      "motor": "UAV Motor (1-100kg Thrust)"
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 0.947,
+        "rotor_count": 4,
+        "motor_max_force_n": 15.0,
+        "wheelbase_mm": 215.0
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-254D52",
+    "model_name": "Custom 5_INCH - Vapor Fpv Geprc Mark",
+    "class": "5_INCH",
+    "components": {
+      "frame": "Vapor Fpv Geprc Mark 5 Frame Manual GEPRC GEP-MK5D O3 ...",
+      "motor": "UAV Motor (1-100kg Thrust)"
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 0.947,
+        "rotor_count": 4,
+        "motor_max_force_n": 15.0,
+        "wheelbase_mm": 225.0
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-A4804C",
+    "model_name": "Custom HEAVY_LIFT - T-DRONES : Long Endu",
+    "class": "HEAVY_LIFT",
+    "components": {
+      "frame": "T-DRONES : Long Endurance Industrial Drone & Multirotor UAV",
+      "motor": "T-Motor MN3110 - 26 470kv Tiger Brushless Motor 3S-6S 80g Quad ..."
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 1.17,
+        "rotor_count": 4,
+        "motor_max_force_n": 45.0,
+        "wheelbase_mm": 690.0
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-8BB61F",
+    "model_name": "Custom HEAVY_LIFT - Tarot X6 6-Axis Hexa",
+    "class": "HEAVY_LIFT",
+    "components": {
+      "frame": "Tarot X6 6-Axis Hexacopter TL6X001 - RMRC",
+      "motor": "T-Motor MN3110 - 26 470kv Tiger Brushless Motor 3S-6S 80g Quad ..."
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 1.33,
+        "rotor_count": 6,
+        "motor_max_force_n": 45.0,
+        "wheelbase_mm": 650.0
+      },
+      "visuals": {
+        "primary_color_hex": "#C9CACD",
+        "secondary_color_hex": "#212121",
+        "material_type": "ALUMINUM",
+        "surface_finish": "BRUSHED",
+        "texture_pattern": "GRAIN",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  },
+  {
+    "sku_id": "DRONE-953FED",
+    "model_name": "Custom 5_INCH - Dji Drone Payload: T",
+    "class": "5_INCH",
+    "components": {
+      "frame": "Dji Drone Payload: Things You May Want to Know | Foxtech",
+      "motor": "UAV Motor (1-100kg Thrust)"
+    },
+    "technical_data": {
+      "physics_config": {
+        "mass_kg": 0.947,
+        "rotor_count": 4,
+        "motor_max_force_n": 15.0,
+        "wheelbase_mm": 225.0
+      },
+      "visuals": {
+        "primary_color_hex": "#888888",
+        "secondary_color_hex": null,
+        "material_type": "PLASTIC",
+        "surface_finish": "MATTE",
+        "texture_pattern": "NONE",
+        "is_emissive": false,
+        "emissive_color_hex": null
+      }
+    },
+    "price_est": 0
+  }
+]
