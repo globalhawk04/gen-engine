@@ -1,3 +1,5 @@
+HUman notes:
+
 I challenged myself to test the new Gemini 3.0 to see how far its reasoning capabilities could push actual engineering tasks. The result is OpenForge: a Neuro-Symbolic Manufacturing Engine that translates user intent into flight-proven hardware designs and generates a physics-based simulation to test them. An AI system that builds its own inventory, creates virtual products, and simulates mission-critical robotics.
 
 These are may unstructured human notes. I will clean them up later:
@@ -10,6 +12,9 @@ Drone_4 works from seed to simulation for drones! I cheated a little bit in the 
 Now that I have the pipeline completed to a point in which i am satified the simulation is as best as i can get i will shift from drones to something else like quad or robot arms using hugging face tut: https://huggingface.co/docs/lerobot/en/so101
 
 Quad has been uploaded.  It is an attempt to create quadruped robot from user inference to simulation
+
+End HUman notes
+
 # OpenForge: Neuro-Symbolic Manufacturing Engine
 
 <div align="center">
